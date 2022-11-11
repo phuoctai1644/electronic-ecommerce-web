@@ -1,0 +1,23 @@
+{
+  "name": "electronic-ecommerce-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass ./sass/style.scss style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuoctai1644/electronic-ecommerce-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phuoctai1644/electronic-ecommerce-web/issues"
+  },
+  "homepage": "https://github.com/phuoctai1644/electronic-ecommerce-web#readme",
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}
