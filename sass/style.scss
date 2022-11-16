@@ -4,3 +4,114 @@
 @import './include/variables.scss';
 @import './include/typography.scss';
 @import './include/color.scss';
+@import './include/global.scss';
+
+// Header section
+.header__wrapper {
+    height: 100px;
+}
+
+.header__logo {
+    img {
+        width: 100px;
+    }
+}
+
+.header__search-bar {
+    max-width: 500px;
+    height: 40px;
+    position: relative;
+
+    button {
+        outline: none;
+        border-color: #ced4da;
+
+        &:hover {
+            background-color: $primary-color;
+        }
+    }
+
+    .header__search-bar-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.header__action {
+    color: $text-color;
+}
+
+.header__action-cart {
+    i {
+        position: relative;
+        span {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            font-size: 10px;
+            background-color: $primary-color;
+            color: $white-color;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+// Navar section
+.navbar {
+    border-top: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
+}
+
+.navbar__category {
+    button {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    }
+    button:hover {
+        background-color: $primary-color-hover;
+    }
+}
+
+.navbar__social {
+    a {
+        color: $text-color;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+// Slideshow section
+.slideshow {
+    height: 400px;
+}
+
+
+// Footer Section
+.footer__wrapper {
+    border-bottom: 2px solid $border-color;
+}
+.footer__social {
+    a {
+        color: $text-color;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+.footer__section {
+    a {
+        color: $text-color;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
