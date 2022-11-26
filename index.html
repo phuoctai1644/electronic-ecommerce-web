@@ -11,8 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- Owl carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Splider Show -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -20,8 +20,12 @@
     <div id="main" class="text-color">
         <header>
             <div class="header__wrapper container d-flex justify-content-between align-items-center">
-                <div class="header__logo">
-                    <img src="./assets/img/CSPhone.png" alt="CSPhone">
+                <div class="h-100 d-flex align-items-center header__logo">
+                    <img 
+                        src="./assets/img/CSPhone.png"
+                        alt="CSPhone"
+                        class="h-50"
+                    >
                 </div>
                 <div class="header__search-bar input-group">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All Category</button>
@@ -87,9 +91,503 @@
             </div>
         </div>
 
-        <div class="slideshow secondary-color-bg">
+        <div class="d-flex align-items-center slideshow">
             <div class="container">
-                <h1>This is section for content </h1>
+                <div class="row">
+                    <div class="col-9">
+                        <section class="splide rounder border" aria-label="Basic Structure Example">
+                            <div class="splide__track">
+                              <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img class="w-100" src="./assets/img/slide-show/slide-1.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img class="w-100" src="./assets/img/slide-show/slide-2.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img class="w-100" src="./assets/img/slide-show/slide-3.png" alt="">
+                                </li>
+                              </ul>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-3">
+                        <div class="slide__show-special font-open-sans rounded border">
+                            <h3 class="text-color mb-3">Chuyển hàng</h3>
+                            <p class="primary-color mb-4">Free Ship</p>
+                            <button class="btn btn-buy-now font-size-16 text-white">
+                                Mua ngay
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-list font-montserrat header-color mt-4">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h3>Sản phẩm nổi bật</h3>
+                    <ul class="d-flex align-items-center font-size-14">
+                        <li class="me-3"><a href="">Điện thoại</a></li>
+                        <li class="me-3"><a href="">Máy tính bảng</a></li>
+                        <li class="me-3"><a href="">Máy tính xách tay</a></li>
+                        <li><a href="">Đông hồ thông minh</a></li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
+                            <div class="product__item-img h-50 mx-auto">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                            </div>
+                            <p class="font-size-12 text-color">Điện thoại</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <ul class="product__item-rating primary-color">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </ul>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-category font-montserrat mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <h3 class="border-bottom pb-2 mb-4">Top <span class="primary-color">Selling</span></h3>
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <h3 class="border-bottom pb-2 mb-4">Trending <span class="primary-color">Product</span></h3>
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <h3 class="border-bottom pb-2 mb-4">Recently <span class="primary-color">Added</span></h3>
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex special-category__product mb-3">
+                            <div class="w-50 d-flex justify-content-center border rounded">
+                                <img src="./assets/img/product/product-1.jpg" alt="" class="h-100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around ms-3">
+                                <p class="font-size-18 font-semibold-600">Product name</p>
+                                <div class="primary-color">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <p class="font-size-12 text-color">Additional text</p>
+                                <p class="font-medium-500">15.999.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form font-montserrat mt-4 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h2 class="header-color">Stay home & get your daily needs from our shop</h2>
+
+                        <p class="font-size-14">Start your daily with <span>CSPhones</span></p>
+                        <form action="" class="w-75 mt-4">
+                            <input type="email" class="form-control mb-3 font-size-14" placeholder="Enter your email address">
+                            <input type="text" class="form-control mb-3 font-size-14" placeholder="Enter your phone number">
+                            <button class="btn btn-subscribe primary-color-bg text-white w-100">Subscribe</button>
+                        </form> 
+                    </div>
+
+                    <div class="col-6">
+                        <div class="d-flex justify-content-center h-100">
+                            <img src="./assets/img/contact-form/shipping.png" alt="" class="h-100">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -157,5 +655,7 @@
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="./main.js"></script> 
 </body>
 </html>
