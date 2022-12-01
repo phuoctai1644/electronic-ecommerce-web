@@ -38,6 +38,7 @@
 }
 
 .header__action-cart {
+    cursor: pointer;
     i {
         position: relative;
         span {
@@ -57,6 +58,14 @@
     }
 }
 
+.header__action--mobile {
+    display: none;
+}
+
+.header__wrapper--mobile {
+    display: none;  
+}
+
 // Navar section
 .navbar {
     border-top: 2px solid $border-color;
@@ -65,12 +74,12 @@
 
 .navbar__category {
     button {
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
-    }
-    button:hover {
-        background-color: $primary-color-hover;
+        background-color: $primary-color;
+        color: $white-color;
+        &:hover {
+            background-color: $primary-color-hover;
+            color: $white-color;
+        }
     }
 }
 
@@ -123,6 +132,7 @@
 .contact-form {
     background-image: url('../assets/img/contact-form/bg-pattern.png');
     background-repeat: repeat-x;
+    background-size: cover;
 }
 
 .btn-subscribe:hover {
@@ -148,5 +158,102 @@
         &:hover {
             color: $primary-color;
         }
+    }
+}
+
+
+// Section for responsive
+/* Mobile and tablet */
+@media (max-width: 992px) {
+    .navbar__category {
+        display: none;
+    }
+
+    .header__action-cart, 
+    .header__action-account {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i { font-size: 28px; }
+        & > span {
+            display: none;
+        }
+    }
+
+    .category-list__header {
+        font-size: 22px;
+    }
+
+    .category-list__item {
+        font-size: 12px;
+    }
+
+    .product__item-img {
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            height: unset !important;
+        }
+    }
+
+    .btn-add-product {
+        width: 100%;
+    }
+
+    .special-category__header {
+        font-size: 22px;
+    }
+
+    .special-category__rating {
+        font-size: 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Small Tablet and mobile */
+@media (max-width: 767px) {
+    .header__wrapper {
+        display: none;
+    }
+    
+    .header__wrapper--mobile {
+        display: block;
+        height: 75px;
+        position: relative;
+        ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+        }
+    
+        &:hover ul {
+            display: flex;
+        }
+    }
+
+    .slideshow {
+        padding: 4px;
+    }
+    
+    .category-list__header,
+    .special-category__header {
+        font-size: 18px;
+    }
+}
+
+/* Small Tablet */
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+/* Mobile */ 
+@media (max-width: 575px) {
+    .header__wrapper {
+        height: 50px;
     }
 }
