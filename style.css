@@ -94,6 +94,10 @@ h1, h2, h3, h4, h5 {
 
 a {
   text-decoration: none;
+  color: #17223B;
+}
+a:hover {
+  color: #F18701;
 }
 
 .header__wrapper {
@@ -123,6 +127,9 @@ a {
   color: #616161;
 }
 
+.header__action-cart {
+  cursor: pointer;
+}
 .header__action-cart i {
   position: relative;
 }
@@ -141,18 +148,26 @@ a {
   align-items: center;
 }
 
+.header__action--mobile {
+  display: none;
+}
+
+.header__wrapper--mobile {
+  display: none;
+}
+
 .navbar {
   border-top: 2px solid #EEEEEE;
   border-bottom: 2px solid #EEEEEE;
 }
 
 .navbar__category button {
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: #F18701;
+  color: #fff;
 }
 .navbar__category button:hover {
   background-color: #ffa52e;
+  color: #fff;
 }
 
 .navbar__social a {
@@ -197,6 +212,7 @@ a {
 .contact-form {
   background-image: url("../assets/img/contact-form/bg-pattern.png");
   background-repeat: repeat-x;
+  background-size: cover;
 }
 
 .btn-subscribe:hover {
@@ -267,6 +283,84 @@ a {
 }
 .footer__section a:hover {
   color: #F18701;
+}
+
+/* Mobile and tablet */
+@media (max-width: 992px) {
+  .navbar__category {
+    display: none;
+  }
+  .header__action-cart,
+  .header__action-account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__action-cart i,
+  .header__action-account i {
+    font-size: 28px;
+  }
+  .header__action-cart > span,
+  .header__action-account > span {
+    display: none;
+  }
+  .category-list__header {
+    font-size: 22px;
+  }
+  .category-list__item {
+    font-size: 12px;
+  }
+  .product__item-img {
+    display: flex;
+    align-items: center;
+  }
+  .product__item-img img {
+    width: 100%;
+    height: unset !important;
+  }
+  .btn-add-product {
+    width: 100%;
+  }
+  .special-category__header {
+    font-size: 22px;
+  }
+  .special-category__rating {
+    font-size: 12px;
+  }
+}
+/* Tablet */
+/* Small Tablet and mobile */
+@media (max-width: 767px) {
+  .header__wrapper {
+    display: none;
+  }
+  .header__wrapper--mobile {
+    display: block;
+    height: 75px;
+    position: relative;
+  }
+  .header__wrapper--mobile ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+  }
+  .header__wrapper--mobile:hover ul {
+    display: flex;
+  }
+  .slideshow {
+    padding: 4px;
+  }
+  .category-list__header,
+  .special-category__header {
+    font-size: 18px;
+  }
+}
+/* Small Tablet */
+/* Mobile */
+@media (max-width: 575px) {
+  .header__wrapper {
+    height: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
