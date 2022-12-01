@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -12,4 +14,9 @@ h1, h2, h3, h4, h5 {
 
 a {
     text-decoration: none;
+    color: $header-color;
+
+    &:hover {
+        color: $primary-color;
+    }
 }
