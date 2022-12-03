@@ -49,11 +49,63 @@
                         <span>Cart</span>
                     </div>
     
-                    <div class="header__action-account ms-4">
+                    <button class="header__action-account btn ms-4" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person me-1 font-size-20"></i>
-                        <span>Account</span>
+                        <span>Login</span>
+                    </button>
+
+                    <!-- Login Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body px-5 py-4">
+                                    <h2 class="text-center mb-3">Login</h2>
+                                    <form>
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                                          <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn primary-color">Forgot password?</button>
+                                        </div>
+                                        <button type="submit" class="btn w-100 mb-3 primary-color-bg text-white">Login</button>
+
+                                        <p>Not a member?<button type="button" class="btn primary-color" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Register Modal -->
+                    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-body px-5 py-4">
+                              <h2 class="text-center mb-3">Register</h2>
+                              <form>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <button type="submit" class="btn w-100 mb-3 primary-color-bg text-white">Register</button>
+
+                                <p>Already have account?<button type="button" class="btn primary-color" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></p>
+                            </form>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                
                     <div class="header__action--mobile ms-4">
                         <i class="bi bi-list font-size-24"></i>
                         
