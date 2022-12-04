@@ -39,7 +39,6 @@
                         <i class="bi bi-search"></i>
                     </div>
                 </div>
-                <button class="btn primary-color-bg text-white font-size-14 p-2" onclick="login_on()" aria-expanded="false">Login</button>
                 <div class="header__action d-flex justify-content-between align-items-center font-size-16 font-montserrat">
                     <div class="header__action-cart ms-4">
                         <i class="bi bi-cart3 me-1 font-size-20">
@@ -59,14 +58,14 @@
                             <div class="modal-content">
                                 <div class="modal-body px-5 py-4">
                                     <h2 class="text-center mb-3">Login</h2>
-                                    <form>
+                                    <form method="POST" action="./login.php">
                                         <div class="mb-3">
-                                          <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          <label for="email-input" class="form-label">Email address</label>
+                                          <input type="email" name="email" id="email-input" class="form-control">
                                         </div>
                                         <div class="mb-3">
-                                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                                          <input type="password" class="form-control" id="exampleInputPassword1">
+                                          <label for="password-input" class="form-label">Password</label>
+                                          <input type="password" name="password" id="password-input" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <button class="btn primary-color">Forgot password?</button>
@@ -86,15 +85,23 @@
                           <div class="modal-content">
                             <div class="modal-body px-5 py-4">
                               <h2 class="text-center mb-3">Register</h2>
-                              <form>
+                              <form method="POST" action="./register.php">
                                 <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" name="username" id="username" class="form-control">
+                                  </div>
+                                <div class="mb-3">
+                                  <label for="email" class="form-label">Email address</label>
+                                  <input type="email" name="email" id="email" class="form-control">
                                 </div>
                                 <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1">
+                                  <label for="password" class="form-label">Password</label>
+                                  <input type="password" name="password" id="password" class="form-control">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                                    <input type="password" name="cf-password" id="confirm-password" class="form-control">
+                                  </div>
                                 <button type="submit" class="btn w-100 mb-3 primary-color-bg text-white">Register</button>
 
                                 <p>Already have account?<button type="button" class="btn primary-color" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></p>
@@ -827,56 +834,6 @@
                 </div>
             </div>
         </footer>
-    </div>
-    <div id="register-container">
-        <div style="width:100%;height:100%;" onclick="register_off()"></div>
-        <div class="register-form">
-            <h1>Đăng kí</h1>
-            <form action="register.php" method="post">
-                <div class="form-group">
-                    <label for="username">Tên người dùng</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Nhập tên người dùng" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Địa chỉ email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email" name="email" required>
-                    <small id="emailHelp" class="form-text text-muted">Chúng tôi sẽ không để lộ email của bạn</small>
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Mật khẩu</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" name="pwd" required>
-                    </div>
-                <div class="form-group">
-                    <label for="cf-pwd">Xác nhận mật khẩu</label>
-                    <input type="password" class="form-control" id="cf-pwd" placeholder="Xác nhận mật khẩu" name="cf-pwd" required>
-                </div>
-                <div style="text-align:center;"><span>Đã có tài khoản? <a onclick="register_to_login()" style="color:blue;">Đăng nhập ngay</a></span></div>
-                <div class="register-button">
-                    <button type="submit" class="primary-color-bg text-white font-size-14 p-2">Đăng kí</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div id="login-container">
-        <div style="width:100%;height:100%;" onclick="login_off()"></div>
-        <div class="login-form">
-            <h1>Đăng nhập</h1>
-            <form action="login.php" method="post">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Địa chỉ email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email" name="email" required>
-                  <small id="emailHelp" class="form-text text-muted">Chúng tôi sẽ không để lộ email của bạn</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Mật khẩu</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nhập mật khẩu" name="pwd" required>
-                </div>
-                <div style="text-align:center;"><span>Chưa có tài khoản? <a onclick="login_to_register()" style="color:blue;">Đăng kí ngay</a></span></div>
-                <div class="login-button">
-                    <button type="submit" class="primary-color-bg text-white font-size-14 p-2">Đăng nhập</button>
-                </div>
-            </form>
-        </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="index.js"></script>
