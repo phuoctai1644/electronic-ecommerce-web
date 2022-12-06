@@ -10,9 +10,16 @@
         $res = $db->query($query);
         if($res->num_rows > 0){
             while($row = $res->fetch_assoc()){
-                if($row["password"] == $pwd){
-                    echo "<h2>Đăng nhập thành công!<h2>";
-                    break;
+                if($row["password"] == md5($pwd)){
+                    $email = $row["email"];
+                    $id = $row["id"];
+                    $token = md5($email.time().$id);
+                    setcookie('token',$token,time()+30*60,'/');
+                    $query = "INSERT INTO user_token (id,token) VALUES ('$id','$token')";
+                    $db->query($query);
+                    $db->close();
+                    header("location:user.php");
+                    die();
                 }
                 else{
                     echo "<h2>Sai mật khẩu<h2>";
@@ -21,7 +28,7 @@
             }
         }
         else{
-            echo "<h2>Bạn chưa tạo tài khoản</h2>";
+            echo "<h2>Tài khoản này không tồn tại</h2>";
         }
     }
     $db->close();
