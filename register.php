@@ -17,6 +17,7 @@
             echo "<h2>Mật khẩu xác nhận không đúng</h2>";
         }
         else{
+            $pwd = md5($pwd);
             $query = "INSERT INTO user_data (username,email,password) VALUES ('$username','$email','$pwd')";
             $db->query($query);
             echo "<h2>Đăng kí thành công!</h2>";
