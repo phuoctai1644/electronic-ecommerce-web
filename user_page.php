@@ -1,3 +1,27 @@
+<?php
+    if(!isset($_COOKIE["token"])){
+        header("location:index.html");
+    }
+    else{
+        $db = new mysqli("localhost","root","","electronic-ecommerce");
+        if($db->connect_error){
+            die("Connection failed: " . $db->connect_error);
+        }
+        $token = $_COOKIE["token"];
+        $query = "SELECT * FROM user_token WHERE token='$token'";
+        $id_user = $db->query($query)->fetch_assoc()["id"];
+        $query = "SELECT * FROM user_account WHERE id=$id_user";
+        $username = $db->query($query)->fetch_assoc()["username"];
+        $query = "SELECT * FROM user_cart WHERE id_user=$id_user";
+        $res = $db->query($query);
+        $total = 0;
+        while($row = $res->fetch_assoc()){
+            $total+=$row["num"];
+        }
+        $db->close();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,16 +66,17 @@
                 <div class="header__action d-flex justify-content-between align-items-center font-size-16 font-montserrat">
                     <div class="header__action-cart ms-4" onclick="display_cart()">
                         <i class="bi bi-cart3 me-1 font-size-20">
-                            <!-- <span>1</span> -->
+                            <span id="num_of_cart"><?php echo $total; ?></span>
                         </i>
                         <span>Cart</span>
                     </div>
-    
                     <button class="header__action-account btn ms-4" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person me-1 font-size-20"></i>
-                        <span>Login</span>
+                        <span id="user_page_name"><?php echo "<b>".$username."</b>"; ?></span>
                     </button>
-
+                    <button class="header__action-account btn ms-4" onclick="logout()">
+                        <b>Logout</b>
+                    </button>
                     <!-- Login Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -293,7 +318,6 @@
                 </div>
             </div>
         </div>
-
         <div class="category-list font-montserrat header-color mt-4">
             <div class="container">
                 <div class="align-items-center justify-content-between mb-3 d-none d-md-flex">
@@ -834,6 +858,22 @@
                 </div>
             </div>
         </footer>
+    </div>
+    <!-- cart -->
+    <div id="cart-container">
+        <div style="width:100%;height:100%;" onclick="hide_cart()"></div>
+        <div class="cart">
+            <div class="cart-row">
+                <div class="row1">
+                    <span>Giỏ hàng</span>
+                </div>
+                <div class="row2" id="row2"></div>
+                <div class="row3" style="position: relative;">
+                    <span style="position: absolute;top:40%;">Tổng cộng: </span>
+                    <span id="total-money" style="color:red;position: absolute;right:0;top:40%;">0</span>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="index.js"></script>
