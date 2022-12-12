@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="product__image border rounded p-3">
-                    <img src="./assets/img/product/product-1.jpg" alt="Product image" class="d-block h-100 mx-auto">
+                    <!-- <img src="./assets/img/product/product-1.jpg" alt="Product image" class="d-block h-100 mx-auto"> -->
+                    <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png" ?>" alt="Product image" class="d-block h-100 mx-auto">
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
