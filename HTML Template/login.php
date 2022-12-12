@@ -10,9 +10,21 @@
         $res = $db->query($query);
         if($res->num_rows > 0){
             while($row = $res->fetch_assoc()){
-                if($row["password"] == $password){
-                    echo "<h2>Đăng nhập thành công!<h2>";
-                    break;
+                if($row["password"] == md5($password)){
+                    $email = $row["email"];
+                    $id = $row["id"];
+                    $username = $row["username"];
+                    $token = md5($email.$id);
+                    setcookie('token',$token,time()+30*60,'/');
+                    $query = "SELECT * FROM user_token WHERE token='$token'";
+                    $res = $db->query($query);
+                    if($res->num_rows == 0){
+                        $query = "INSERT INTO user_token (id,token) VALUES ('$id','$token')";
+                        $db->query($query);
+                    }
+                    header("location:user_page.php");
+                    $db->close();
+                    die();
                 }
                 else{
                     echo "<h2>Sai mật khẩu<h2>";
