@@ -10,14 +10,8 @@
         $token = $_COOKIE["token"];
         $query = "SELECT * FROM user_token WHERE token='$token'";
         $id_user = $db->query($query)->fetch_assoc()["id"];
-        $query = "SELECT * FROM user_account WHERE id=$id_user";
+        $query = "SELECT * FROM user_account WHERE id='$id_user'";
         $username = $db->query($query)->fetch_assoc()["username"];
-        $query = "SELECT * FROM user_cart WHERE id_user=$id_user";
-        $res = $db->query($query);
-        $total = 0;
-        while($row = $res->fetch_assoc()){
-            $total+=$row["num"];
-        }
         $db->close();
     }
 ?>
@@ -39,7 +33,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="total_money(<?php echo $id_user; ?>)">
     <div id="main" class="text-color">
         <!-- Start header -->
         <header>
@@ -64,9 +58,9 @@
                     </div>
                 </div>
                 <div class="header__action d-flex justify-content-between align-items-center font-size-16 font-montserrat">
-                    <div class="header__action-cart ms-4" onclick="display_cart()">
+                    <div class="header__action-cart ms-4" onclick="display_cart(<?php echo $id_user; ?>)">
                         <i class="bi bi-cart3 me-1 font-size-20">
-                            <span id="num_of_cart"><?php echo $total; ?></span>
+                            <span id="num_of_cart">0</span>
                         </i>
                         <span>Cart</span>
                     </div>
@@ -349,10 +343,10 @@
                     <div class="col-6 col-sm-4 col-md-3">
                         <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
                             <div class="product__item-img h-50 mx-auto">
-                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100" id="productimg1">
                             </div>
                             <p class="font-size-12 text-color">Điện thoại</p>
-                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600" id="productname1">iPhone 12 Pro Max</p>
                             <ul class="product__item-rating primary-color">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -362,8 +356,8 @@
                             </ul>
 
                             <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
-                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                <span class="font-medium-500 font-size-16 header-color me-3" id="productcost1">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12" onclick="add_to_cart(<?php echo $id_user; ?>,1)">
                                     <i class="bi bi-cart-plus"></i>
                                     Add
                                 </button>
@@ -373,10 +367,10 @@
                     <div class="col-6 col-sm-4 col-md-3">
                         <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
                             <div class="product__item-img h-50 mx-auto">
-                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100" id="productimg2">
                             </div>
                             <p class="font-size-12 text-color">Điện thoại</p>
-                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600" id="productname2">iPhone 12 Pro Max</p>
                             <ul class="product__item-rating primary-color">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -386,8 +380,8 @@
                             </ul>
 
                             <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
-                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                <span class="font-medium-500 font-size-16 header-color me-3" id="productcost2">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12" onclick="add_to_cart(<?php echo $id_user; ?>,2)">
                                     <i class="bi bi-cart-plus"></i>
                                     Add
                                 </button>
@@ -397,10 +391,10 @@
                     <div class="col-6 col-sm-4 col-md-3">
                         <div class="product-item__wrap d-flex flex-column justify-content-between border rounded p-3 mb-4">
                             <div class="product__item-img h-50 mx-auto">
-                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100">
+                                <img src="./assets/img/product/product-1.jpg" alt="product-img" class="h-100" id="productimg3">
                             </div>
                             <p class="font-size-12 text-color">Điện thoại</p>
-                            <p class="product__item-name font-size-16 header-color font-semibold-600">iPhone 12 Pro Max</p>
+                            <p class="product__item-name font-size-16 header-color font-semibold-600" id="productname3">iPhone 12 Pro Max</p>
                             <ul class="product__item-rating primary-color">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -410,8 +404,8 @@
                             </ul>
 
                             <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <span class="font-medium-500 font-size-16 header-color me-3">15.999.000đ</span>
-                                <button class="btn btn-add-product primary-color-bg text-white font-size-12">
+                                <span class="font-medium-500 font-size-16 header-color me-3" id="productcost3">15.999.000đ</span>
+                                <button class="btn btn-add-product primary-color-bg text-white font-size-12" onclick="add_to_cart(<?php echo $id_user; ?>,3)">
                                     <i class="bi bi-cart-plus"></i>
                                     Add
                                 </button>

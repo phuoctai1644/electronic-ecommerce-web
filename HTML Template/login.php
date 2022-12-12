@@ -14,10 +14,14 @@
                     $email = $row["email"];
                     $id = $row["id"];
                     $username = $row["username"];
-                    $token = md5($email.time().$id);
+                    $token = md5($email.$id);
                     setcookie('token',$token,time()+30*60,'/');
-                    $query = "INSERT INTO user_token (id,token) VALUES ('$id','$token')";
-                    $db->query($query);
+                    $query = "SELECT * FROM user_token WHERE token='$token'";
+                    $res = $db->query($query);
+                    if($res->num_rows == 0){
+                        $query = "INSERT INTO user_token (id,token) VALUES ('$id','$token')";
+                        $db->query($query);
+                    }
                     header("location:user_page.php");
                     $db->close();
                     die();
