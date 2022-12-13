@@ -20,7 +20,7 @@
                         $query = "INSERT INTO user_token (id,token) VALUES ('$id','$token')";
                         $db->con->query($query);
                     }
-                    header("location:user_page.php");
+                    header("location:$_SERVER[HTTP_REFERER]");
                     // $db->close();
                     die();
                 }

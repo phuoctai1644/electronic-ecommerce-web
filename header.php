@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="./style.css">
     <?php 
         require ('connection.php');
+
+        if(isset($_COOKIE["token"])){
+            $token = $_COOKIE["token"];
+            $query = "SELECT * FROM user_token WHERE token='$token'";
+            $id_user = $db->con->query($query)->fetch_assoc()["id"];
+            $query = "SELECT * FROM user WHERE id='$id_user'";
+            $username = $db->con->query($query)->fetch_assoc()["username"];
+        }
+
     ?>
 </head>
 
@@ -23,7 +32,7 @@
     <div id="main" class="text-color">
         <header>
             <div class="header__wrapper container d-sm-none d-md-flex justify-content-between align-items-center">
-                <a href="/" class="h-100 d-flex align-items-center header__logo">
+                <a href="./index.php" class="h-100 d-flex align-items-center header__logo">
                     <img 
                         src="./assets/img/CSPhone.png"
                         alt="CSPhone"
@@ -31,11 +40,11 @@
                     >
                 </a>
                 <div class="header__search-bar input-group">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All Category</button>
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All Brand</button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Smartphone</a></li>
-                        <li><a class="dropdown-item" href="#">Tablet</a></li>
-                        <li><a class="dropdown-item" href="#">Laptop</a></li>
+                        <li><a class="dropdown-item" href="#">Samsung</a></li>
+                        <li><a class="dropdown-item" href="#">Apple</a></li>
+                        <li><a class="dropdown-item" href="#">Xiaomi</a></li>
                     </ul>
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
                     <div class="header__search-bar-icon">
@@ -49,11 +58,27 @@
                         </i>
                         <span>Cart</span>
                     </div>
+                    
+                    <?php if (isset($_COOKIE["token"])): ?>
+                    <button class="header__action-account btn ms-4">
+                        <i class="bi bi-person me-1 font-size-20"></i>
+                        <span id="user_page_name"><?php echo "<b>".$username."</b>"; ?></span>
+                    </button>
 
+                    <button 
+                        class="header__action-account btn ms-4" 
+                        onclick="logOut()">
+                        <i class="bi bi-box-arrow-left me-1 font-size-20"></i>
+                        <span>Logout</span>
+                    </button>
+                    <?php else: ?>
+                    
                     <button class="header__action-account btn ms-4" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person me-1 font-size-20"></i>
                         <span>Login</span>
                     </button>
+
+                    <?php endif; ?>
 
                     <!-- Login Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
@@ -177,3 +202,10 @@
                 </div>
             </div>
         </header>
+
+<script>
+    function logOut() {
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        location.reload();
+    }
+</script>

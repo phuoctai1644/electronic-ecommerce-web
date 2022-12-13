@@ -3,24 +3,24 @@
         <div class="dropdown navbar__category">
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-list"></i>
-                Tất cả danh mục
+                Tất cả nhãn hàng
             </button>
             <ul class="dropdown-menu font-size-14">
                 <li>
                     <a class="dropdown-item" href="#">
                         <i class="bi bi-phone"></i>
-                        Điện thoại
+                        Samsung
                     </a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">
-                        <i class="bi bi-tablet"></i>
-                        Máy tính bảng
+                        <i class="bi bi-phone"></i>
+                        Apple
                     </a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">
-                        <i class="bi bi-laptop"></i>
+                        <i class="bi bi-phone"></i>
                         Máy tính xách tay
                     </a>
                 </li>
