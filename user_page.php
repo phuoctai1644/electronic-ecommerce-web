@@ -10,7 +10,7 @@
         $token = $_COOKIE["token"];
         $query = "SELECT * FROM user_token WHERE token='$token'";
         $id_user = $db->query($query)->fetch_assoc()["id"];
-        $query = "SELECT * FROM user_account WHERE id='$id_user'";
+        $query = "SELECT * FROM user WHERE id='$id_user'";
         $username = $db->query($query)->fetch_assoc()["username"];
         $db->close();
     }

@@ -35,5 +35,18 @@
                 return $resultArray;
             }
         }
+
+        public function getProductsByBrand($brand_name, $table = 'product') {
+            if (isset($item_id)) {
+                $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_brand={$brand_name}");
+                $resultArray = array();
+                // fetch product data one by one
+                while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                    $resultArray[] = $item;
+                }
+    
+                return $resultArray;
+            }
+        }
     }
 ?>

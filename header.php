@@ -61,7 +61,7 @@
                             <div class="modal-content">
                                 <div class="modal-body px-5 py-4">
                                     <h2 class="text-center mb-3">Login</h2>
-                                    <form method="POST" action="./login.php">
+                                    <form method="POST" action="login.php">
                                         <div class="mb-3">
                                             <label for="email-input" class="form-label">Email address</label>
                                             <input type="email" name="email" id="email-input" class="form-control">
@@ -88,7 +88,7 @@
                             <div class="modal-content">
                             <div class="modal-body px-5 py-4">
                                 <h2 class="text-center mb-3">Register</h2>
-                                <form method="POST" action="./register.php">
+                                <form method="POST" action="register.php">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
                                     <input type="text" name="username" id="username" class="form-control">

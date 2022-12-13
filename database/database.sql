@@ -45,28 +45,29 @@ CREATE TABLE `product` (
   `item_brand` varchar(200) NOT NULL,
   `item_name` varchar(255) NOT NULL,
   `item_price` double(10,2) NOT NULL,
-  `item_image` varchar(255) NOT NULL,
-  `item_register` datetime DEFAULT NULL
+  `item_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'Samsung', 'Samsung Galaxy 10', 152.00, './assets/products/1.png', '2020-03-28 11:08:57'), -- NOW()
-(2, 'Redmi', 'Redmi Note 7', 122.00, './assets/products/2.png', '2020-03-28 11:08:57'),
-(3, 'Redmi', 'Redmi Note 6', 122.00, './assets/products/3.png', '2020-03-28 11:08:57'),
-(4, 'Redmi', 'Redmi Note 5', 122.00, './assets/products/4.png', '2020-03-28 11:08:57'),
-(5, 'Redmi', 'Redmi Note 4', 122.00, './assets/products/5.png', '2020-03-28 11:08:57'),
-(6, 'Redmi', 'Redmi Note 8', 122.00, './assets/products/6.png', '2020-03-28 11:08:57'),
-(7, 'Redmi', 'Redmi Note 9', 122.00, './assets/products/8.png', '2020-03-28 11:08:57'),
-(8, 'Redmi', 'Redmi Note', 122.00, './assets/products/10.png', '2020-03-28 11:08:57'),
-(9, 'Samsung', 'Samsung Galaxy S6', 152.00, './assets/products/11.png', '2020-03-28 11:08:57'),
-(10, 'Samsung', 'Samsung Galaxy S7', 152.00, './assets/products/12.png', '2020-03-28 11:08:57'),
-(11, 'Apple', 'Apple iPhone 5', 152.00, './assets/products/13.png', '2020-03-28 11:08:57'),
-(12, 'Apple', 'Apple iPhone 6', 152.00, './assets/products/14.png', '2020-03-28 11:08:57'),
-(13, 'Apple', 'Apple iPhone 7', 152.00, './assets/products/15.png', '2020-03-28 11:08:57');
+INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`) VALUES
+(1, 'Samsung', 'Samsung Galaxy Z Flip4 128GB', 849.00, './assets/img/product/1.jpg'),
+(2, 'Xiaomi', 'Xiaomi Redmi Note 11 (4GB/64GB)', 219.00, './assets/img/product/2.jpg'),
+(3, 'Xiaomi', 'Xiaomi Redmi Note 11S 5G', 349.00, './assets/img/product/3.jpg'),
+(4, 'Xiaomi', 'Xiaomi 12T Pro 5G', 749.00, './assets/img/product/4.jpg'),
+(5, 'Xiaomi', 'Xiaomi 11 Lite 5G NE', 449.00, './assets/img/product/5.jpg'),
+(6, 'Samsung', 'Samsung Galaxy A23 4GB', 349.00, './assets/img/product/6.jpg'),
+(7, 'Samsung', 'Samsung Galaxy Z Fold4 256GB', 1799.00, './assets/img/product/7.jpg'),
+(8, 'Samsung', 'Samsung Galaxy S22+ 5G 128GB', 999.00, './assets/img/product/8.jpg'),
+(9, 'Samsung', 'Samsung Galaxy A04 (3GB/32GB) ', 129.00, './assets/img/product/9.jpg'),
+(10, 'Apple', 'iPhone 11 64GB', 489.00, './assets/img/product/10.jpg'),
+(11, 'Apple', 'iPhone 13 Pro Max 1TB', 1799.00, './assets/img/product/11.jpg'),
+(12, 'Apple', 'iPhone 13 Pro 512GB', 1349.00, './assets/img/product/12.jpg'),
+(13, 'Apple', 'iPhone 12 mini 256GB', 999.00, './assets/img/product/13.jpg'),
+(14, 'Apple', 'iPhone 13 128GB', 999.00, './assets/img/product/14.jpg'),
+(15, 'Apple', 'iPhone 12 64GB', 749.00, './assets/img/product/15.jpg');
 
 -- --------------------------------------------------------
 
@@ -77,17 +78,17 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `register_date` datetime DEFAULT NULL
+  `last_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Daily', 'Tuition', '2020-03-28 13:07:17'),
-(2, 'Akshay', 'Kashyap', '2020-03-28 13:07:17');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`) VALUES
+(1, 'Tran', 'Tai'),
+(2, 'Ho', 'Phuc'),
+(3, 'Nguyen', 'Quan');
 
 -- --------------------------------------------------------
 
