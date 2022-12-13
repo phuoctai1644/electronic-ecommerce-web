@@ -162,4 +162,8 @@ function cost_to_string(string){
     res+="đ";
     return res;
 }
-
+function check_login(){
+    if(document.cookie){
+        location.href = "user_page.php";
+    }
+}
