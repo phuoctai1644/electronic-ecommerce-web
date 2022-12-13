@@ -1,18 +1,15 @@
 <?php
+    require ('connection.php');
+
     if(!isset($_COOKIE["token"])){
         header("location:index.html");
     }
     else{
-        $db = new mysqli("localhost","root","","electronic-ecommerce");
-        if($db->connect_error){
-            die("Connection failed: " . $db->connect_error);
-        }
         $token = $_COOKIE["token"];
         $query = "SELECT * FROM user_token WHERE token='$token'";
-        $id_user = $db->query($query)->fetch_assoc()["id"];
+        $id_user = $db->con->query($query)->fetch_assoc()["id"];
         $query = "SELECT * FROM user WHERE id='$id_user'";
-        $username = $db->query($query)->fetch_assoc()["username"];
-        $db->close();
+        $username = $db->con->query($query)->fetch_assoc()["username"];
     }
 ?>
 

@@ -1,6 +1,5 @@
 <?php
-    require ('database/DBController.php');
-    $db = new DBController();
+    require ('connection.php');
 
     if(trim($_POST["username"]) != "" && trim($_POST["email"]) != "" && trim($_POST["password"]) != "" && trim($_POST["cf-password"]) != ""){
         $username = $_POST["username"];
