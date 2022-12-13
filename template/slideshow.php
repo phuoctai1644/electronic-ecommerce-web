@@ -29,10 +29,10 @@
                 <div class="slide__show-special font-open-sans rounded border">
                     <h3 class="text-color mb-3">Chuyển hàng</h3>
                     <p class="primary-color mb-4">Free Ship</p>
-                    <button class="btn btn-buy-now font-size-16 text-white">
+                    <a href="cart.php" class="btn btn-buy-now font-size-16 text-white">
                         Mua ngay
                         <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

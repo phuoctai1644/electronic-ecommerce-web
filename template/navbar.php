@@ -28,7 +28,7 @@
         </div>
 
         <ul class="d-flex align-items-center"> 
-            <li><a href="/">Home</a></li>
+            <li><a href="./index.php">Home</a></li>
             <li class="ms-5"><a href="/about.html">About</a></li>
             <li class="dropdown ms-5">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

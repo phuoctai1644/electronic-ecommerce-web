@@ -2,7 +2,7 @@
     <div class="footer__wrapper container my-5 font-open-sans">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4">
-                <a href="/" class="footer__logo mt-3 mb-5 font-montserrat header-color" >
+                <a href="./index.php" class="footer__logo mt-3 mb-5 font-montserrat header-color" >
                     <h1>CSPhones</h1>
                 </a>
 
