@@ -1,3 +1,10 @@
+<script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide' );
+    splide.mount();
+});
+</script>
+
 <div class="d-flex align-items-center slideshow">
     <div class="container">
         <div class="row">

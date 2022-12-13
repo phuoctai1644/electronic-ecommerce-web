@@ -116,6 +116,10 @@
 // Product item section
 .product-item__wrap {
     height: 350px;
+
+    .product__item-img:hover {
+        transform: translateY(-2px);
+    }
 }
 
 .btn-add-product:hover {
@@ -333,6 +337,14 @@
     &:hover {
         background-color: $primary-color;
         color: $white-color;
+    }
+}
+
+
+// Section for cart
+.cart-item {
+    .cart-item__img {
+        width: 100px;
     }
 }
 

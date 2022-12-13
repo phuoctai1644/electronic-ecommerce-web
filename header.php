@@ -24,7 +24,6 @@
             $query = "SELECT * FROM user WHERE id='$id_user'";
             $username = $db->con->query($query)->fetch_assoc()["username"];
         }
-
     ?>
 </head>
 
@@ -52,12 +51,12 @@
                     </div>
                 </div>
                 <div class="header__action d-flex justify-content-between align-items-center font-size-16 font-montserrat">
-                    <div class="header__action-cart ms-4">
+                    <a href="./cart.php" class="header__action-cart ms-4">
                         <i class="bi bi-cart3 me-1 font-size-20">
                             <span class="header__action-cart-number"></span>
                         </i>
                         <span>Cart</span>
-                    </div>
+                    </a>
                     
                     <?php if (isset($_COOKIE["token"])): ?>
                     <button class="header__action-account btn ms-4">
@@ -202,10 +201,3 @@
                 </div>
             </div>
         </header>
-
-<script>
-    function logOut() {
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        location.reload();
-    }
-</script>

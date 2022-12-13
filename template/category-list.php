@@ -52,7 +52,7 @@
 
                     <div class="d-flex align-items-center justify-content-between flex-wrap">
                         <span class="font-medium-500 font-size-16 header-color me-3">$<?= $item['item_price'] ?? '0'; ?></span>
-                        <button class="btn btn-add-product primary-color-bg text-white font-size-12" onclick="addToCart()">
+                        <button class="btn btn-add-product primary-color-bg text-white font-size-12" onclick="addToCart(<?php echo $item['item_id']; ?>)">
                             <i class="bi bi-cart-plus"></i>
                             Add
                         </button>
