@@ -211,6 +211,9 @@ a:hover {
 .special-category__product {
   height: 100px;
 }
+.special-category__product > a {
+  min-width: 40%;
+}
 
 .contact-form {
   background-image: url("assets/img/contact-form/bg-pattern.png");

@@ -1,16 +1,15 @@
 <?php 
     class DBController {
         // Database Connection Properties
-        // protected $host = '34.124.177.159:6805';
-        // protected $user = 'root';
-        // protected $password = 'newpassword';
-        // protected $database = "ltw";
-
-        protected $host = 'localhost';
+        protected $host = '34.124.177.159:6805';
         protected $user = 'root';
-        protected $password = '';
-        protected $database = "electronic-ecommerce";
-        
+        protected $password = 'newpassword';
+        protected $database = "ltw";
+
+        // protected $host = 'localhost';
+        // protected $user = 'root';
+        // protected $password = '';
+        // protected $database = "electronic-ecommerce";
 
         // connection property
         public $con = null;

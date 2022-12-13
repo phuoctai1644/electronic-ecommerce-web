@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 11:01 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: Dec 13, 2022 at 10:45 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,20 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shopee`
+-- Database: `electronic-ecommerce`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -76,75 +63,86 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL
+  `id` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`) VALUES
-(1, 'Tran', 'Tai'),
-(2, 'Ho', 'Phuc'),
-(3, 'Nguyen', 'Quan');
+INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
+(4, 'phuc', 'phuc@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(5, 'phuc ho', 'phuc1@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(6, 'taitran', 'tai@gmail.com', 'e99a18c428cb38d5f260853678922e03');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Table structure for table `user_cart`
 --
 
-CREATE TABLE `wishlist` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+CREATE TABLE `user_cart` (
+  `id_user` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `num` int(255) NOT NULL,
+  `money` int(255) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_cart`
+--
+
+INSERT INTO `user_cart` (`id_user`, `name`, `num`, `money`, `image`) VALUES
+(4, 'iphone 14 promax', 24, 35000000, 'https://cdn.tgdd.vn/Products/Images/42/289700/iphone-14-pro-max-vang-thumb-600x600.jpg'),
+(4, 'iphone 13', 44, 20000000, 'https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-starlight-1-600x600.jpg'),
+(4, 'OPPO A57', 9, 4500000, 'https://cdn.tgdd.vn/Products/Images/42/285082/oppo-a57-128gb-vang-600x600.jpg'),
+(4, 'Samsung Galaxy S21', 8, 13000000, 'https://cdn.tgdd.vn/Products/Images/42/267212/Samsung-Galaxy-S21-FE-vang-600x600.jpg'),
+(4, 'Samsung Galaxy Z Flip4', 3, 25000000, 'https://cdn.tgdd.vn/Products/Images/42/285696/samsung-galaxy-z-flip4-5g-512gb-thumb-xanh-600x600.jpg'),
+(5, 'iphone 13', 6, 14000000, 'https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-starlight-1-600x600.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_token`
+--
+
+CREATE TABLE `user_token` (
+  `id` int(255) NOT NULL,
+  `token` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_token`
+--
+
+INSERT INTO `user_token` (`id`, `token`) VALUES
+(4, 'a602213d6a1b4c0b6e875e2b2b073769'),
+(5, '4d46973c715cedc963447cecc8da23c0'),
+(6, '4fe83158c28ccfd236a9bb7a13dde58a');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`cart_id`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`item_id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

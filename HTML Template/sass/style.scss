@@ -130,6 +130,10 @@
 // Special category section
 .special-category__product {
     height: 100px;
+
+    & > a {
+        min-width: 40%;
+    }
 }
 
 // Contact form section
