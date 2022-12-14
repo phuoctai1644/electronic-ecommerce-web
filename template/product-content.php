@@ -36,8 +36,8 @@
                         </div>
 
                         <div class="mt-3 d-flex flex-column d-sm-inline-block">
-                            <button class="btn btn-product__buy-now font-medium-500 px-4 py-2 mb-2">Buy now</button>
-                            <button class="btn btn-product__add-cart font-medium-500 px-4 py-2 mb-2" onclick="addToCart()">
+                            <button class="btn btn-product__buy-now font-medium-500 px-4 py-2 mb-2" onclick="buyNow(<?php echo $item['item_id']; ?>)">Buy now</button>
+                            <button class="btn btn-product__add-cart font-medium-500 px-4 py-2 mb-2" onclick="addToCart(<?php echo $item['item_id']; ?>)">
                                 <i class="bi bi-cart-plus me-2"></i>
                                 Add to cart
                             </button>

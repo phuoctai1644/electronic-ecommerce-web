@@ -22,6 +22,11 @@ function addToCart(itemId) {
     localStorage.setItem('cart-items', JSON.stringify(cartItems));
 }
 
+function buyNow(itemId) {
+    addToCart(itemId);
+    window.location.href = './cart.php';
+}
+
 function logOut() {
     document.cookie = "token=; cartItems=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; ";
     localStorage.removeItem('cart-quantity');
